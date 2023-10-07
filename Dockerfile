@@ -10,9 +10,7 @@ WORKDIR /app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package.json ./
-
-RUN apk add --no-cache git
-
+RUN apk update && apk add --no-cache git
 # Install any needed packages
 RUN npm install
 
